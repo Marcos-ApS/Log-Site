@@ -20,7 +20,7 @@ export default function App() {
       <div className="main-wrap">
         <Navbar onMenu={() => setMenuOpen(true)} onLogout={() => setLoggedIn(false)} />
         <main className="main-content">{page === "Dashboard" ? <Dashboard /> : <PageContent page={page} />}</main>
-        <footer>© 2026 Sistema de Logística</footer>
+        <footer>© 2026 Buddy Log</footer>
       </div>
     </div>
   );

@@ -6,8 +6,9 @@
     --card: #18152d;
     --surface: #0f0d20;
     --border: rgba(124, 58, 237, .18);
-    --purple: #7c3aed;
-    --neon: #a855f7;
+    --purple: #6C00E9;
+    --neon: #C915FC;
+    --border1: #DB5EE9;
     --text: #f1efff;
     --muted: #8b82a8;
     --dim: #5a5278;
@@ -84,7 +85,7 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, var(--purple), var(--neon));
+    background:var(--purple);
     font-weight: 800
 }
 
@@ -126,7 +127,7 @@ select {
 
 .sidebar nav button:hover,
 .sidebar nav button.active {
-    background: rgba(124, 58, 237, .16);
+    background: rgba(83, 27, 180, 0.385);
     color: var(--neon)
 }
 
@@ -248,7 +249,7 @@ select {
     padding: 0 18px;
     border: 1px solid rgba(168, 85, 247, .45);
     border-radius: 9px;
-    background: linear-gradient(135deg, var(--purple), #6d28d9);
+    background: var(--purple);
     color: #fff;
     font-weight: 600;
     cursor: pointer
@@ -848,11 +849,11 @@ footer {
     min-height: 50px;
     border: 1px solid rgba(168, 85, 247, .45);
     border-radius: 11px;
-    background: linear-gradient(135deg, var(--purple), #6d28d9);
+    background: var(--purple);
     color: #fff;
     font-weight: 800;
     cursor: pointer;
-    box-shadow: 0 12px 30px rgba(124, 58, 237, .25);
+    box-shadow: 0 7px 20px rgba(124, 58, 237, .25);
 }
 
 .login-submit:hover {
@@ -959,21 +960,7 @@ footer {
     overflow: hidden;
     justify-content: center;
     padding: 24px;
-    background:
-        radial-gradient(circle at 50% 25%, rgba(168, 85, 247, .2), transparent 30%),
-        radial-gradient(circle at 15% 80%, rgba(124, 58, 237, .13), transparent 28%),
-        linear-gradient(145deg, #0a0818, #120d27 55%, #090714);
-}
-
-.login-background-grid {
-    position: absolute;
-    inset: 0;
-    opacity: .22;
-    background-image:
-        linear-gradient(rgba(168, 85, 247, .16) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(168, 85, 247, .16) 1px, transparent 1px);
-    background-size: 54px 54px;
-    mask-image: linear-gradient(to bottom, transparent 0%, #000 30%, #000 100%);
+        
 }
 
 .login-card--centered {
@@ -1073,61 +1060,6 @@ footer {
     box-shadow: inset 0 0 22px rgba(255, 255, 255, .025);
 }
 
-.rack-1 {
-    left: 10%;
-    top: 12%;
-    width: 14%;
-    height: 18%;
-}
-
-.rack-2 {
-    left: 34%;
-    top: 10%;
-    width: 18%;
-    height: 19%;
-}
-
-.rack-3 {
-    left: 60%;
-    top: 11%;
-    width: 25%;
-    height: 18%;
-}
-
-.rack-4 {
-    left: 30%;
-    top: 40%;
-    width: 20%;
-    height: 19%;
-}
-
-.rack-5 {
-    left: 58%;
-    top: 40%;
-    width: 16%;
-    height: 20%;
-}
-
-.rack-6 {
-    left: 79%;
-    top: 40%;
-    width: 11%;
-    height: 20%;
-}
-
-.rack-7 {
-    left: 32%;
-    top: 72%;
-    width: 19%;
-    height: 17%;
-}
-
-.rack-8 {
-    left: 72%;
-    top: 69%;
-    width: 14%;
-    height: 22%;
-}
 
 .robot-route {
     position: absolute;

@@ -20,10 +20,27 @@ export default function PageContent({ page }) {
           </div>
             <button className="primary-button">Adicionar</button>
           </div>
-      <div className="stat-grid">{config.stats.map((item) => <Card key={item} className="stat"><span>{item}</span><strong>--</strong><small>Aguardando dados</small></Card>)}</div>
+      <div className="stat-grid">{config.stats.map((item) => 
+        <Card key={item} className="stat">
+          <span>{item}</span>
+            <strong>--</strong>
+            <small>Aguardando dados</small>
+          </Card>)}
+      </div>
       <Card title={`Lista de ${page.toLowerCase()}`} subtitle="Estrutura visual preparada para receber dados reais">
-        <div className="toolbar"><input placeholder="Pesquisar..." /><select defaultValue="Todos"><option>Todos</option></select></div>
-        <div className="table-wrap"><table><thead><tr>{config.columns.map((col) => <th key={col}>{col}</th>)}</tr></thead><tbody>{[1, 2, 3].map((row) => <tr key={row}>{config.columns.map((col, i) => <td key={col} data-label={col}>{i === 0 ? "—" : <span className="skeleton" />}</td>)}</tr>)}</tbody></table></div>
+        <div className="toolbar">
+          <input placeholder="Pesquisar..." />
+            <select defaultValue="Todos">
+              <option>Todos</option>
+            </select>
+        </div>
+        <div className="table-wrap"><table>
+          <thead>
+            <tr>{config.columns.map((col) => <th key={col}>{col}</th>)}</tr>
+          </thead>
+          <tbody>{[1, 2, 3].map((row) => <tr key={row}>{config.columns.map((col, i) => <td key={col} data-label={col}>{i === 0 ? "—" : <span className="skeleton" />}</td>)}</tr>)}</tbody>
+          </table>
+          </div>
       </Card>
     </div>
   );

@@ -7,12 +7,20 @@ export default function Dashboard() {
   return (
     <div className="page-stack">
       <div className="page-heading">
-        <div><span>Início / Dashboard</span><h1>Dashboard</h1><p>Visão geral das operações logísticas</p></div>
+        <div>
+          <span>Início / Dashboard</span>
+            <h1>Dashboard</h1><p>Visão geral das operações logísticas</p>
+          </div>
         <button className="primary-button">Atualizar</button>
       </div>
 
       <div className="kpi-grid">
-        {kpis.map((label) => <Card key={label} className="stat"><span>{label}</span><strong>--</strong><small>Aguardando dados</small></Card>)}
+        {kpis.map((label) => 
+          <Card key={label} className="stat">
+            <span>{label}</span>
+              <strong>--</strong>
+                <small>Aguardando dados</small>
+          </Card>)}
       </div>
 
       <div className="dashboard-grid">
@@ -23,9 +31,6 @@ export default function Dashboard() {
         <Card title="Mapa do armazém" subtitle="Rastreamento visual da rota do robô">
           <div className="warehouse-map warehouse-map--tracking">
             <div className="map-grid" />
-            <div className="rack rack-1" /><div className="rack rack-2" /><div className="rack rack-3" />
-            <div className="rack rack-4" /><div className="rack rack-5" /><div className="rack rack-6" />
-            <div className="rack rack-7" /><div className="rack rack-8" />
 
             <svg className="robot-route" viewBox="0 0 100 62" preserveAspectRatio="none" aria-hidden="true">
               <polyline points="13,12 13,50 61,50 61,31 85,31" />
@@ -47,8 +52,16 @@ export default function Dashboard() {
       </div>
 
       <div className="charts-grid">
-        <Card title="Movimentações por hora"><div className="fake-chart bars">{[32, 55, 40, 72, 60, 85, 45, 68, 52, 76].map((h, i) => <i key={i} style={{ height: `${h}%` }} />)}</div></Card>
-        <Card title="Produtividade diária"><div className="fake-chart line"><svg viewBox="0 0 500 160" preserveAspectRatio="none"><polyline points="0,130 60,110 120,118 180,75 240,90 300,55 360,70 420,35 500,48" /></svg></div></Card>
+        <Card title="Movimentações por hora">
+          <div className="fake-chart bars">{[32, 55, 40, 72, 60, 85, 45, 68, 52, 76].map((h, i) => <i key={i} style={{ height: `${h}%` }} />)}</div>
+        </Card>
+        <Card title="Produtividade diária">
+          <div className="fake-chart line">
+            <svg viewBox="0 0 500 160" preserveAspectRatio="none">
+              <polyline points="0,130 60,110 120,118 180,75 240,90 300,55 360,70 420,35 500,48" />
+            </svg>
+          </div>
+        </Card>
       </div>
     </div>
   );
