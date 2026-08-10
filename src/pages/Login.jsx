@@ -2,25 +2,66 @@ import { useState } from "react";
 import logo from "../assets/logo-new.png";
 
 export default function Login({ onLogin }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  /*marcos substitui aquele baguil do email e do password, na requisição o json tem
+  que ser mandado como um só*/
+  const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+    });
+    /*ah e nesse baguil criei uma função pra modularizar mais o código, nesse caso
+    como ele tem tudo em um json só tem q pegar os elementos anteriores.*/
+  const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
 
-  function submit(event) {
-    event.preventDefault();
-    if (!email.trim() || !password.trim()) {
+  
+  /*basicamente isso aqui pega a url do servidor e manda um post request,
+  dps com o credentials true ele retorna o token de usuario.*/
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    if (formData.email === '' ||formData.password === '') {
       setError("Preencha o e-mail e a senha.");
       return;
     }
-    setError("");
-    onLogin();
+    if(formData.password.length < 6) {
+      setError("Senha com menos de 6 caracteres!");
+      return;
+    };
+
+    try {
+      const response = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        headers: {
+                    'Content-Type': 'application/json'
+                },
+        credentials: 'include', 
+        body: JSON.stringify(formData)
+      });
+      if(!response.ok) {
+        if(response.status === 429) return alert('Timeout, volte em 5 minutos');
+        if(response.status === 400 || response.status === 401) return alert('Bad Request');
+        if(response.status === 404) return alert('servidor fora do ar!')
+      };
+      /*url hipotetica.*/
+      alert('login sucedido!')
+      onLogin();
+    } catch(error) {
+      console.log(error)
+    }
   }
+
+  
 
   return (
     <main className="login-page login-page--centered">
       <div className="login-background-grid" />
-      <form className="login-card login-card--centered" onSubmit={submit}>
+      <form className="login-card login-card--centered" onSubmit={handleSubmit}>
         <img src={logo} alt="Buddylog" className="login-centered-logo" />
         <div className="login-heading login-heading--centered">
           <span>Bem-vindo de volta</span>
@@ -30,13 +71,13 @@ export default function Login({ onLogin }) {
 
         <label className="login-field">
           <span>E-mail</span>
-          <input type="email" placeholder="operador@empresa.com" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" />
+          <input type="email" name = "email" placeholder="operador@empresa.com" value={formData.email} onChange={handleChange} autoComplete="email" />
         </label>
 
         <label className="login-field">
           <span>Senha</span>
           <div className="password-wrap">
-            <input type={showPassword ? "text" : "password"} placeholder="Digite sua senha" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" />
+            <input type={showPassword ? "text" : "password"} name = "password" placeholder="Digite sua senha" value={formData.password} onChange={handleChange} autoComplete="current-password" />
             <button type="button" onClick={() => setShowPassword((v) => !v)}>{showPassword ? "Ocultar" : "Mostrar"}</button>
           </div>
         </label>
