@@ -1,0 +1,269 @@
+.dog-robot {
+    left: 86%;
+    top: 49%;
+    width: clamp(30px, 4.2vw, 42px);
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    filter: drop-shadow(0 5px 7px rgba(0, 0, 0, .45));
+}
+
+/* Robô cachorro como ponto inicial da rota */
+.robot-dot-start {
+    display: none;
+}
+
+.dog-robot-start {
+    left: 12%;
+    top: 17%;
+    width: clamp(38px, 5.2vw, 52px);
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    filter: drop-shadow(0 5px 7px rgba(0, 0, 0, .45));
+}
+.dog-robot {
+    width: clamp(34px, 5vw, 48px);
+    transform: translate(2%, -18%);
+}
+/* Novo mapa do armazém */
+.warehouse-map--tracking {
+    min-height: 320px;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    padding: 0;
+    border: 1px solid rgba(168, 85, 247, .28);
+    background: #111426;
+}
+
+.map-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(139, 130, 168, .14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 130, 168, .14) 1px, transparent 1px);
+    background-size: 34px 34px;
+}
+
+.rack {
+    position: absolute;
+    border: 1px solid rgba(156, 163, 190, .12);
+    background: rgba(117, 126, 157, .18);
+    box-shadow: inset 0 0 22px rgba(255, 255, 255, .025);
+}
+
+
+.robot-route {
+    position: absolute;
+    inset: 7% 6% 9%;
+    width: 88%;
+    height: 84%;
+    overflow: visible;
+}
+
+.robot-route polyline {
+    fill: none;
+    stroke: #f4f1ff;
+    stroke-width: 1.2;
+    stroke-dasharray: 3 2;
+    vector-effect: non-scaling-stroke;
+    opacity: .95;
+}
+
+.map-dot {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, .75);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, .06), 0 0 17px currentColor;
+    z-index: 4;
+}
+
+.robot-dot {
+    background: #7c3aed;
+    color: #7c3aed;
+}
+
+.product-dot {
+    background: #f59e0b;
+    color: #f59e0b;
+    left: 80%;
+    top: 47%;
+}
+
+.destination-dot {
+    background: #22c55e;
+    color: #22c55e;
+}
+
+.robot-dot-start {
+    left: 12%;
+    top: 17%;
+}
+
+.destination-dot-one {
+    left: 12%;
+    top: 77%;
+}
+
+.destination-dot-two {
+    left: 58%;
+    top: 48%;
+}
+
+.dog-robot {
+    position: absolute;
+    left: 84%;
+    top: 44%;
+    width: clamp(48px, 8vw, 76px);
+    height: auto;
+    object-fit: contain;
+    transform: translate(-4%, -28%);
+    z-index: 6;
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .4));
+}
+
+.map-legend {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    z-index: 7;
+    display: flex;
+    gap: 13px;
+    padding: 8px 10px;
+    border-radius: 9px;
+    background: rgba(13, 11, 30, .74);
+    backdrop-filter: blur(8px);
+    color: #d9d4e7;
+    font-size: 10px;
+}
+
+.map-legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.legend-robot {
+    background: #7c3aed;
+}
+
+.legend-product {
+    background: #f59e0b;
+}
+
+.legend-destination {
+    background: #22c55e;
+}
+.card {
+    background: linear-gradient(145deg, rgba(24, 21, 45, .95), rgba(17, 14, 34, .95));
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    min-width: 0
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 14px
+}
+
+.card-header p {
+    margin: 4px 0 15px;
+    color: var(--muted);
+    font-size: 11px
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px
+}
+
+.stat span {
+    display: block;
+    color: var(--muted);
+    font-size: 11px
+}
+
+.stat strong {
+    display: block;
+    font-size: 26px;
+    margin: 10px 0 4px;
+    color: #d8d2f0
+}
+
+.stat small {
+    color: var(--dim);
+    font-size: 9px
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 360px minmax(0, 1fr);
+    gap: 16px
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px
+}
+
+.empty-state {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--muted);
+    gap: 8px
+}
+
+.empty-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(34, 197, 94, .1);
+    color: var(--green)
+}
+
+.empty-state strong {
+    color: var(--text);
+    font-size: 13px
+}
+
+.empty-state span {
+    font-size: 11px
+}
+
+.warehouse-map {
+    min-height: 250px;
+    padding: 22px;
+    background: var(--bg2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px
+}

@@ -1,0 +1,213 @@
+@media (max-width: 1279px) {
+    .kpi-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 320px 1fr;
+    }
+}
+
+@media (max-width: 1023px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+        transition: transform .22s;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .backdrop.show {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        border: 0;
+        background: rgba(0, 0, 0, .55);
+    }
+
+    .menu-button {
+        display: grid;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .login-showcase {
+        display: none;
+    }
+
+    .login-panel {
+        min-height: 100dvh;
+        padding: 20px;
+    }
+
+    .login-mobile-brand {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-content {
+        padding: 14px;
+    }
+
+    .navbar {
+        padding: 0 14px;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+    }
+
+    .primary-button {
+        padding: 0 12px;
+    }
+
+    .card {
+        padding: 13px;
+    }
+
+    .table-wrap {
+        overflow: visible;
+    }
+
+    table {
+        min-width: 0;
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 12px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px;
+        background: rgba(24, 21, 45, .6);
+    }
+
+    td {
+        border: 0;
+        padding: 2px 0;
+    }
+
+    td::before {
+        content: attr(data-label);
+        display: block;
+        color: var(--dim);
+        font-size: 8px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+
+    .login-card--centered {
+        padding: 26px 20px;
+    }
+
+    .warehouse-map--tracking {
+        min-height: 280px;
+    }
+
+    .map-legend {
+        left: 10px;
+        right: auto;
+        top: 10px;
+        gap: 9px;
+    }
+
+    .brand {
+        height: 62px;
+        min-height: 62px;
+    }
+
+    .login-centered-logo {
+        width: min(280px, 94%);
+        height: 88px;
+    }
+
+    .dog-robot {
+        width: 30px;
+        left: 85%;
+    }
+
+    .dog-robot-start {
+        left: 12%;
+        top: 17%;
+        width: 38px;
+    }
+}
+
+@media (max-width: 480px) {
+    .kpi-grid,
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-heading {
+        flex-direction: column;
+    }
+
+    .primary-button {
+        width: 100%;
+    }
+
+    .navbar-actions .online {
+        display: none;
+    }
+
+    .login-panel {
+        padding: 12px;
+    }
+
+    .login-card {
+        padding: 24px 18px;
+        border-radius: 16px;
+    }
+
+    .login-options {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .sidebar-logo {
+        width: 135px;
+    }
+}
