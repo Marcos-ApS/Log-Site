@@ -3,8 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "main": "main.cjs",
   "scripts": {
-    "dev": "vite",
+    "react-dev": "vite",
+   "dev": "concurrently \"npm run react-dev\" \"electron . --no-sandbox\"",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -14,6 +16,10 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.0",
+    "concurrently": "^10.0.4",
+    "cross-env": "^10.1.0",
+    "electron": "^43.4.0",
+    "electron-builder": "^26.15.3",
     "vite": "^8.0.0"
   }
 }

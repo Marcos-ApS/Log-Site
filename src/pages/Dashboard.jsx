@@ -15,12 +15,14 @@ export default function Dashboard() {
       </div>
 
       <div className="kpi-grid">
+
         {kpis.map((label) => 
           <Card key={label} className="stat">
             <span>{label}</span>
               <strong>--</strong>
                 <small>Aguardando dados</small>
           </Card>)}
+          
       </div>
 
       <div className="dashboard-grid">
