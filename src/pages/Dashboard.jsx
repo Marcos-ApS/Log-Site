@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import Card from "../components/Card";
-import Map from "../components/Map";
+import Map from "../components/Map.jsx";
 import { ErrorBanner, EmptyState } from "../components/Feedback";
 import { API_BASE, friendlyError, networkError } from "../lib/api";
 
