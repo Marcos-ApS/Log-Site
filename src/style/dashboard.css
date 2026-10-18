@@ -289,14 +289,18 @@
 
 .map-container-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
-    min-width: 360px;
+    width: max-content;
+    min-width: 100%;
+    min-height: 260px;
 }
 
 .map-container {
     display: flex;
-    min-height: 54px;
+    flex: 0 0 140px;
+    flex-direction: column;
+    height: 260px;
     overflow: hidden;
     border: 1px solid rgba(168, 85, 247, .22);
     border-radius: 8px;
@@ -306,6 +310,7 @@
 .map-container-street,
 .map-container-module {
     display: flex;
+    flex: 1 1 0;
     align-items: center;
     justify-content: center;
     padding: 10px;
@@ -320,6 +325,6 @@
 
 .map-container-module {
     color: #ddd6fe;
-    border-left: 2px dashed rgba(196, 181, 253, .3);
+    border-top: 2px dashed rgba(196, 181, 253, .3);
     background: rgba(168, 85, 247, .08);
 }
